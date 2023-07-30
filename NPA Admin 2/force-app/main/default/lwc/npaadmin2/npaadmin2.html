@@ -1,0 +1,86 @@
+<template>
+    <lightning-card>
+    <template if:true={loader}>
+        <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+    </template>
+    <lightning-tabset label="Records">
+        <lightning-tab label="No Acc Rec">
+            <lightning-datatable
+                    class="slds-max-medium-table_stacked"
+                    key-field="id"
+                    data={accounts}
+                    columns={columns}>
+            </lightning-datatable>
+        
+            <div class="slds-align_absolute-center"> 
+                <div class="slds-p-right_xx-small">
+                    <lightning-button label="Prev"
+                        disabled={isPrev} onclick={handlePrev}
+                                        variant="brand"
+                                        icon-name="utility:back"
+                                        name="prev"></lightning-button>  
+                </div>
+                <span class="slds-badge slds-badge_lightest">
+                    {recordStart}-{recordEnd} of {totalRecords} | Page {pageNumber} of {totalPages}
+                </span>
+                <div class="slds-p-left_xx-small">
+                    <lightning-button label="Next"
+                    disabled={isNext} onclick={handleNext}
+                                        variant="brand"
+                                        icon-name="utility:forward"
+                                        icon-position="right"
+                                        name="next"></lightning-button>
+                </div>
+            </div>
+    </lightning-tab> 
+    <lightning-tab label="User">
+        <div class="slds-align_absolute-center"> 
+            <div class="slds-p-right_xx-small">
+        
+                     
+                <lightning-button label="Prev"
+                disabled={isPrev} onclick={handlePrev}
+                                    variant="brand"
+                                    icon-name="utility:back"
+                                    name="prev"></lightning-button>  
+            </div>
+            <span class="slds-badge slds-badge_lightest">
+                {recordStart}-{recordEnd} of {totalRecords} | Page {pageNumber} of {totalPages}
+            </span>
+            <div class="slds-p-left_xx-small">
+                <lightning-button label="Next"
+                disabled={isNext} onclick={handleNext}
+                                    variant="brand"
+                                    icon-name="utility:forward"
+                                    icon-position="right"
+                                    name="next"></lightning-button>
+            </div>
+        </div>
+    </lightning-tab>
+    <lightning-tab label="User2">
+        <div class="slds-align_absolute-center"> 
+            <div class="slds-p-right_xx-small">
+        
+                     
+                <lightning-button label="Prev"
+                disabled={isPrev} onclick={handlePrev}
+                                    variant="brand"
+                                    icon-name="utility:back"
+                                    name="prev"></lightning-button>  
+            </div>
+            <span class="slds-badge slds-badge_lightest">
+                {recordStart}-{recordEnd} of {totalRecords} | Page {pageNumber} of {totalPages}
+            </span>
+            <div class="slds-p-left_xx-small">
+                <lightning-button label="Next"
+                disabled={isNext} onclick={handleNext}
+                                    variant="brand"
+                                    icon-name="utility:forward"
+                                    icon-position="right"
+                                    name="next"></lightning-button>
+            </div>
+        </div>
+    </lightning-tab>
+    </lightning-tabset>
+</lightning-card> 
+</template>
